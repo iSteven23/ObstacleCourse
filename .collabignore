@@ -22,14 +22,16 @@ ehthumbs.db
 # Visual Studio / MonoDevelop generated
 # =====================================
 [Ee]xported[Oo]bj/
-*.userprefs
 *.csproj
-*.pidb
-*.suo
-*.sln
-*.user
 *.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
 *.booproj
+*.svd
 
 # Unity generated
 # ===============
