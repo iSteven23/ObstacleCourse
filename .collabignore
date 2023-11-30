@@ -2,6 +2,12 @@
 # Default Collab Ignore Rules
 # ===========================
 
+# Unity-specific ignores
+[Ll]ibrary/
+[Tt]emp/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
 # OS Generated
 # ============
 .DS_Store
