@@ -20,6 +20,10 @@ namespace SlimUI.ModernMenu{
         public GameObject exitMenu;
         [Tooltip("Optional 4th Menu")]
         public GameObject extrasMenu;
+		[Tooltip("The menu for the Settings")]
+        public GameObject canvOptionsMenu;
+		[Tooltip("The menu for the new mission")]
+        public GameObject newMissionMenu;
 
         public enum Theme {custom1, custom2, custom3};
         [Header("THEME SETTINGS")]
@@ -147,6 +151,13 @@ namespace SlimUI.ModernMenu{
 			playMenu.SetActive(false);
 		}
 
+		public void Position3(){
+			DisablePlayCampaign(); //canvOptionsMenu newMissionMenu
+			canvOptionsMenu.SetActive(false);
+			newMissionMenu.SetActive(true);
+			CameraObject.SetFloat("Animate",2);
+		}
+
 		public void Position2(){
 			DisablePlayCampaign();
 			CameraObject.SetFloat("Animate",1);
@@ -154,6 +165,18 @@ namespace SlimUI.ModernMenu{
 
 		public void Position1(){
 			CameraObject.SetFloat("Animate",0);
+			// Start the coroutine to wait for the animation to complete
+        	StartCoroutine(WaitForAnimationToEnd());
+		}
+		IEnumerator WaitForAnimationToEnd()
+		{
+			// Wait for the duration of the animation
+			// Replace 3f with the actual duration of your animation
+			yield return new WaitForSeconds(1f);
+
+			// These lines execute after the animation completes
+			canvOptionsMenu.SetActive(true);
+			newMissionMenu.SetActive(false);
 		}
 
 		void DisablePanels(){
