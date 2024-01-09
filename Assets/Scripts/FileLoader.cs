@@ -30,6 +30,8 @@ public class FileLoader : MonoBehaviour
                 if (buttonText != null) {
                     buttonText.text = fileName;
                 }
+                // Add onClick Listener
+                newItems.GetComponent<Button>().onClick.AddListener(() => ButtonClicked(fileName));
             }
             
         }
@@ -44,5 +46,12 @@ public class FileLoader : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void ButtonClicked(string filePath)
+    {
+        // Handle the button click event
+        Debug.Log("Button clicked for file: " + filePath);
+        // Add your code here to handle what happens when the button is clicked
     }
 }
